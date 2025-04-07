@@ -1,4 +1,3 @@
-
 PYPI_ACCOUNT=pypi
 
 _extract_build_number_tag () {
@@ -41,6 +40,7 @@ add_build_number () {
 
 
 update_to_pypi () {
+    echo -e "\033[38;5;82;1m ***** Uploading the $LIBRARY_NAME v$LIBRARY_VERSION Build number: $LIBRARY_BUILD_NAME_TAG - Pypi repository ***** \033[0;m \n"
     python3 -m pip install --upgrade twine
     python3 -m twine upload --repository $PYPI_ACCOUNT dist/* \
                             --config-file $(PWD)/.pypirc
@@ -48,6 +48,7 @@ update_to_pypi () {
 
 
 update_tag_info () {
+    echo -e "\033[38;5;82;1m ***** Updating the $LIBRARY_NAME v$LIBRARY_VERSION Build number: $LIBRARY_BUILD_NAME_TAG - Git repository tag ***** \033[0;m \n"
     git tag -d $LIBRARY_VERSION
     git tag $LIBRARY_VERSION
 
