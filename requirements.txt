@@ -1,0 +1,9 @@
+# Tokens creation
+PyJWT==2.10.1
+
+# Enum extend decorator
+aenum==3.1.15
+
+# Create library
+wheel
+setuptools
